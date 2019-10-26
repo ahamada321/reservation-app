@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { products } from '../../products';
 
 @Component({
@@ -8,15 +7,13 @@ import { products } from '../../products';
   styleUrls: ['./product-listings.component.scss']
 })
 export class ProductListComponent implements OnInit {
-  products
+  products: any
 
 
-  constructor(private route: ActivatedRoute) { }
+  constructor() { }
 
   ngOnInit() {
-    this.route.paramMap.subscribe(params => {
-      this.products = products
-    })
+    this.products = products
   }
 
 }
