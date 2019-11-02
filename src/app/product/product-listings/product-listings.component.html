@@ -2,7 +2,7 @@
     <br>
     <div class="row">
         <div *ngFor="let product of products; let productId = index" class="col-sm">
-            <a [routerLink]="[ productId ]">
+            <a [routerLink]="[ product._id ]">
                 <div class="card">
                     <img src="{{ product.coverImage }}" class="card-img-top" alt="...">
                     <div class="card-body">
