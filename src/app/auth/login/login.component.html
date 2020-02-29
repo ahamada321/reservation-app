@@ -1,0 +1,52 @@
+<div class="wrapper">
+    <div class="page-header" style="background-image: url('./assets/img/login-image.jpg');">
+        <div class="filter"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-sm-6 mr-auto ml-auto">
+                      <div class="card card-register">
+                          <h3 class="title">ログイン</h3>
+                          <div class="social-line text-center">
+                              <a href="#pablo" class="btn btn-neutral btn-facebook btn-just-icon">
+                                  <i class="fa fa-facebook-square"></i>
+                              </a>
+                              <a href="#pablo" class="btn btn-neutral btn-google btn-just-icon">
+                                  <i class="fa fa-google-plus"></i>
+                              </a>
+                              <a href="#pablo" class="btn btn-neutral btn-twitter btn-just-icon">
+                                  <i class="fa fa-twitter"></i>
+                              </a>
+                          </div>
+                          <form class="register-form">
+                              <label>Eメール</label>
+                              <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus===true}">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text">
+                                      <i class="nc-icon nc-email-85"></i>
+                                  </span>
+                                </div>
+
+                                  <input type="text" class="form-control" placeholder="Eメール" (focus)="focus=true" (blur)="focus=false" >
+                              </div>
+
+                              <label>パスワード</label>
+                              <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus1===true}">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text">
+                                      <i class="nc-icon nc-key-25"></i>
+                                  </span>
+                                </div>
+                                  <input type="text" class="form-control" placeholder="パスワード" (focus)="focus1=true" (blur)="focus1=false" >
+                              </div>
+                              <button class="btn btn-danger btn-block btn-round">ログイン</button>
+                          </form>
+                          <div class="forgot">
+                              <a href="#" class="btn btn-link btn-danger">パスワードを忘れた場合</a>
+                          </div>
+                      </div>
+                    </div>
+                </div>
+
+            </div>
+    </div>
+</div>
