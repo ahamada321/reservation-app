@@ -47,7 +47,7 @@ router.post('/register', function(req, res) {
   */
 
   if(!username) {
-    return res.status(422).send({errors: [{title: 'User error', detail: 'Please fill username!'}]})
+    return res.status(422).send({errors: [{title: 'User error', detail: 'ユーザー名を入力してください！'}]})
   }
   if(!email) {
     return res.status(422).send({errors: [{title: 'User error', detail: 'Please fill email!'}]})
