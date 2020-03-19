@@ -1,0 +1,70 @@
+<div class="wrapper">
+    <div class="page-header" style="background-image: url('./assets/img/login-image.jpg');">
+        <div class="filter"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-sm-6 mr-auto ml-auto">
+                      <div class="card card-register">
+                          <h3 class="title">ログイン</h3>
+                          <div class="social-line text-center">
+                              <a href="#pablo" class="btn btn-neutral btn-facebook btn-just-icon">
+                                  <i class="fa fa-facebook-square"></i>
+                              </a>
+                              <a href="#pablo" class="btn btn-neutral btn-google btn-just-icon">
+                                  <i class="fa fa-google-plus"></i>
+                              </a>
+                              <a href="#pablo" class="btn btn-neutral btn-twitter btn-just-icon">
+                                  <i class="fa fa-twitter"></i>
+                              </a>
+                          </div>
+                          <form class="register-form" #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+                              <label>Eメール</label>
+                              <div class="input-group form-group-no-border">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text">
+                                      <i class="nc-icon nc-email-85"></i>
+                                  </span>
+                                </div>
+                                <input 
+                                    ngModel
+                                    name="email"
+                                    type="email" 
+                                    class="form-control" 
+                                    placeholder="Eメール" 
+                                    pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"
+                                    required
+                                    />
+                              </div>
+
+                              <label>パスワード</label>
+                              <div class="input-group form-group-no-border">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text">
+                                      <i class="nc-icon nc-key-25"></i>
+                                  </span>
+                                </div>
+                                <input 
+                                    ngModel
+                                    name="password"
+                                    type="password" 
+                                    class="form-control" 
+                                    placeholder="パスワード" 
+                                    required
+                                    />
+                            </div>
+                              <button [disabled]="!loginForm.valid" class="btn btn-danger btn-block btn-round" type="submit">ログイン</button>
+                          </form>
+                          <br />
+                          <div *ngIf="errors && errors.length>0" class="alert alert-danger">
+                            <p *ngFor="let error of errors">{{ error.detail }}</p>
+                          </div>
+                          <div class="forgot">
+                              <a href="#" class="btn btn-link btn-danger">パスワードを忘れた場合</a>
+                          </div>
+                      </div>
+                    </div>
+                </div>
+
+            </div>
+    </div>
+</div>
