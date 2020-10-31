@@ -4,29 +4,29 @@ import { Router } from '@angular/router';
 import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
-    selector: 'app-login',
-    templateUrl: './login.component.html',
-    styleUrls: ['./login.component.scss']
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-    errors: any = []
+  errors: any = []
 
-    constructor(
-        private authSservice: AuthService,
-        private router: Router
-    ) { }
+  constructor(
+    private authService: AuthService,
+    private router: Router
+  ) { }
 
-    ngOnInit() {}
+  ngOnInit() { }
 
-    login(loginForm) {
-        this.authSservice.login(loginForm.value).subscribe(
-            (token) => {
-                this.router.navigate(['/products'])
-            },
-            (err: HttpErrorResponse) => {
-                console.error(err)
-                this.errors = err.error.errors
-            }        
-        )
-    }
+  login(loginForm) {
+    this.authService.login(loginForm.value).subscribe(
+      (token) => {
+        this.router.navigate(['/products'])
+      },
+      (err: HttpErrorResponse) => {
+        console.error(err)
+        this.errors = err.error.errors
+      }
+    )
+  }
 }
